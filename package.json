@@ -4,7 +4,7 @@
   "description": "React component for building simple questionnaires\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --progress --colors --watch",
+    "dev": "webpack-dev-server -d --progress --colors",
     "build": "webpack",
     "test": "jest --colors"
   },
