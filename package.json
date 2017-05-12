@@ -4,6 +4,8 @@
   "description": "React component for building simple questionnaires\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack -d --progress --colors --watch",
+    "build": "webpack",
     "test": "jest --colors"
   },
   "repository": {
@@ -23,6 +25,8 @@
   },
   "homepage": "https://github.com/gregnb/react-question#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
@@ -32,6 +36,7 @@
     "jest-cli": "^20.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
