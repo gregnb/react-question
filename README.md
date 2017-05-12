@@ -1,3 +1,3 @@
 # react-question
 
-## Work in progress
+## React component for building simple questionnaires
