@@ -1,10 +1,10 @@
 {
   "name": "react-question",
   "version": "1.0.0",
-  "description": "ReactJS components for building simple questionnaires\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "description": "React component for building simple questionnaires\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --colors"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
     "enzyme": "^2.8.2",
+    "extract-text-webpack-plugin": "^2.1.0",
     "jest": "^20.0.1",
     "jest-cli": "^20.0.1",
     "react": "^15.5.4",
