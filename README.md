@@ -1,2 +1,2 @@
 # react-question
-React component for building simple questionnaires
+React/Redux component for building simple questionnaires
