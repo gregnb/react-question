@@ -1,5 +1,4 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as AllActions from '../actions';
@@ -15,7 +14,7 @@ class App extends React.Component {
     return (
       <div id="wrapper">
         <h1>Soon..</h1>
-	<button onClick={this.handleClick}>Add question</button>
+        <button onClick={this.handleClick}>Add question</button>
       </div>
     );
   }
