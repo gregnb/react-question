@@ -11,6 +11,6 @@ export default function configureStore(initialState = {}) {
     applyMiddleware(thunk, logger)
   )
   return store;
-};
+}
 
 
