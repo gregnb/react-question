@@ -14,11 +14,11 @@ import questions from './data/';
 import configureStore from './configureStore';
 
 const initialState = { 
-	questionReducer: { 
-		questions,
-		currentQuestion: 0,
-		totalQuestions: Object.keys(questions).length
-	} 
+  questionReducer: { 
+    questions,
+    currentQuestion: 0,
+    totalQuestions: Object.keys(questions).length
+  }
 };
 
 const store = configureStore(initialState);
