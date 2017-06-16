@@ -1,5 +1,4 @@
 /* question data */
-import { normalize, schema } from 'normalizr';
 
 const questions = {
   "What is your name?": { 

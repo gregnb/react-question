@@ -13,8 +13,7 @@ export const questionReducer = (state = {}, action) => {
     case types.GET_QUESTION:
       return { ...state, currentQuestion: action.id };
     
-    case types.DELETE_QUESTION:
-      
+    case types.DELETE_QUESTION: 
       const questionKeys = Object.keys(state.questions);
       const questionID = questionKeys[action.id];    
 
@@ -22,20 +21,14 @@ export const questionReducer = (state = {}, action) => {
       return { ...state, questions: otherQuestions, totalQuestions: state.totalQuestions - 1 };
     
     case types.ANSWER_QUESTION:
+      const questionData = { ...state.questions[action.data.question], selected : action.data.answer };
+      const updatedQuestions = { ...state.questions, [action.data.question]: questionData };  
 
-      /* poor design. if we normalized data more would be better? */
-      
-      let questions = { ...state.questions };
-      let questionData = { ...state.questions[action.data.question] };
-      questionData.selected = action.data.answer;
-
-      questions[action.data.question] = questionData;
-
-      return { ...state, questions, currentQuestion: state.currentQuestion + 1 };
+      return { ...state, questions: updatedQuestions, currentQuestion: state.currentQuestion + 1 };
 
     default:
       return state;
-      
+
   }
 };
 

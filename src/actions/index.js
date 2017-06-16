@@ -7,8 +7,8 @@ export const addQuestion = (question, data) => ({
 });
 
 export const answerQuestion = (data) => ({
-	type: types.ANSWER_QUESTION,
-	data
+  type: types.ANSWER_QUESTION,
+  data
 });
 
 export const deleteQuestion = (id) => ({
