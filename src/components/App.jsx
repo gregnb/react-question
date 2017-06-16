@@ -11,6 +11,7 @@ class App extends React.Component {
 
   }
 
+
   /*handleClick = () => {
     
     const num = Math.floor(Math.random() * 20);
@@ -26,7 +27,7 @@ class App extends React.Component {
   handleDelete = (id) => {
 
     this.props.deleteQuestion(id);
-    
+
   }
 
   render() {
