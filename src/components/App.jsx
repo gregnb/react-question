@@ -11,12 +11,12 @@ class App extends React.Component {
 
   }
 
-
   /*handleClick = () => {
     
     const num = Math.floor(Math.random() * 20);
 
-    this.props.addQuestion(`This should be new? ${num}`, { 
+    this.props.addQuestion({
+      question: `This should be new? ${num}`, 
       options: [ "Greg", "Joe", "Tom"],
       answer: "Greg"
     });
@@ -35,10 +35,7 @@ class App extends React.Component {
     console.log("render in app called");
     console.log(this.props);
 
-    const keys = Object.keys(this.props.data.questions);
-    const questionKey = keys[this.props.data.currentQuestion];
-
-    const question = this.props.data.questions[questionKey];
+    const question = this.props.data.questions[this.props.data.currentQuestion];
     if(this.props.data.currentQuestion == this.props.data.totalQuestions) {
       return (
         <div id="question-wrapper">
@@ -53,7 +50,7 @@ class App extends React.Component {
         <ul>
         {question.options.map((option, index) => {
           return (
-           <li key={index} onClick={this.handleAnswer.bind(null, questionKey, option)}>{option}</li>
+           <li key={index} onClick={this.handleAnswer.bind(null, this.props.data.currentQuestion, option)}>{option}</li>
           )
         })}
         </ul>

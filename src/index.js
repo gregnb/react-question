@@ -17,7 +17,7 @@ const initialState = {
   questionReducer: { 
     questions,
     currentQuestion: 0,
-    totalQuestions: Object.keys(questions).length
+    totalQuestions: questions.length
   }
 };
 

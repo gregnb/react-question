@@ -14,10 +14,7 @@ export const questionReducer = (state = {}, action) => {
       return { ...state, currentQuestion: action.id };
     
     case types.DELETE_QUESTION: 
-      const questionKeys = Object.keys(state.questions);
-      const questionID = questionKeys[action.id];    
-
-      const { [questionID]:deletedKey, ...otherQuestions } = state.questions;
+      const otherQuestions = state.questions.filter((value, index) => index !== action.id); 
       return { ...state, questions: otherQuestions, totalQuestions: state.totalQuestions - 1 };
     
     case types.ANSWER_QUESTION:
@@ -31,7 +28,6 @@ export const questionReducer = (state = {}, action) => {
 
   }
 };
-
 
 const reducers = combineReducers({  
   questionReducer
