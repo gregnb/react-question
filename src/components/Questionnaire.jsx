@@ -1,12 +1,6 @@
 import React from 'react';
 
-const Questionnaire = (props) => {
-
-  const {
-    currentQuestion,
-    question,
-    handleAnswer
-  } = props;
+const Questionnaire = ({ currentQuestion, question, handleAnswer }) => {
 
   return (
     <div className="questionnaire-card">

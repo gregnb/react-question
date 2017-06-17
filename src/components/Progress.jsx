@@ -1,11 +1,6 @@
 import React from 'react';
 
-const Progress = (props) => {
-
-  const {
-    index,
-    total,
-  } = props;
+const Progress = ({ index, total }) => {
 
   return (
     <div className="progress-bar">
