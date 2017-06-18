@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   watchOptions: {
@@ -19,9 +20,9 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
+    new ExtractTextPlugin('css/styles.css'),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    
+    new webpack.optimize.OccurrenceOrderPlugin()
   ],
   module: {
     rules: [
@@ -29,6 +30,15 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.less$/,
+        use:  ExtractTextPlugin.extract({
+          use: [
+            { loader: "css-loader", options: { sourceMap: true } }, 
+            { loader: "less-loader", options: { sourceMap: true } }
+          ]
+        })
       }
     ]
   },
