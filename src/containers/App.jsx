@@ -33,7 +33,6 @@ class App extends React.Component {
         <Progress index={currentQuestion} total={totalQuestions} />
         <Questionnaire 
           currentQuestion={currentQuestion}
-          totalQuestions={totalQuestions}
           question={questions[currentQuestion]}
           handleAnswer={this.handleAnswer}
         />
@@ -47,7 +46,7 @@ const mapStateToProps = (state) => ({
   data: state.questionReducer
 });
 
-export default connect((mapStateToProps), { ...AllActions })(App);
+export default connect(mapStateToProps, { ...AllActions })(App);
 
 
 
