@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Questionnaire = ({ currentQuestion, question, handleAnswer }) => {
 
@@ -17,6 +18,12 @@ const Questionnaire = ({ currentQuestion, question, handleAnswer }) => {
     </div>
   );
 
+};
+
+Questionnaire.propTypes = {
+  currentQuestion: PropTypes.number.isRequired,
+  question: PropTypes.object.isRequired,
+  handleAnswer: PropTypes.func.isRequired
 };
 
 export default Questionnaire;
