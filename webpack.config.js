@@ -26,8 +26,7 @@ const common = {
     new webpack.DefinePlugin({
       ENV: JSON.stringify(TARGET_ENV),
     }),
-    new ExtractTextPlugin('css/styles.css'),
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new ExtractTextPlugin('css/styles.css')
   ],
   module: {
     rules: [
@@ -80,6 +79,7 @@ switch(TARGET_ENV) {
       },
       devtool: 'source-map',
       plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
           name: 'vendor',
           filename: 'vendor.bundle.js'
