@@ -1,8 +1,12 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
+/* TARGET ENV */
+const TARGET_ENV = process.env.NODE_ENV;
+
+const common = {
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
@@ -10,8 +14,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  /*devtool: 'eval-cheap-source-map',*/
-  devtool: 'source-map',
   entry: {
     app: "./src/index.js"
   },
@@ -20,8 +22,11 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.DefinePlugin({
+      ENV: JSON.stringify(TARGET_ENV),
+    }),
     new ExtractTextPlugin('css/styles.css'),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin()
   ],
   module: {
@@ -41,13 +46,66 @@ module.exports = {
         })
       }
     ]
-  },
-  devServer: {
-    disableHostCheck: true,
-    hot: true,
-    inline: true,
-    host: "0.0.0.0",
-    port: 9090
   }
 };
+
+
+switch(TARGET_ENV) {
+
+  case 'dev':
+  case 'development':
+  
+    module.exports = merge.smart(common, {
+      devtool: 'eval-source-map',
+      devServer: {
+        disableHostCheck: true,
+        hot: true,
+        inline: true,
+        host: "0.0.0.0",
+        port: 9090
+      },
+      plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+      ]
+    });
+
+    break;
+
+  case 'production':
+
+    module.exports = merge.smart(common, {
+      entry: {
+        vendor: ["react", "react-dom", "redux", "react-redux"]
+      },
+      devtool: 'source-map',
+      plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+          name: 'vendor',
+          filename: 'vendor.bundle.js'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+            warnings: false,
+            screw_ie8: true,
+            conditionals: true,
+            unused: true,
+            comparisons: true,
+            sequences: true,
+            dead_code: true,
+            evaluate: true,
+            if_return: true,
+            join_vars: true,
+          },
+          output: {
+            comments: false,
+          }
+        })
+      ]
+    });
+
+    break;
+
+}
+
 
