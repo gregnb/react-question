@@ -22,21 +22,21 @@ class App extends React.Component {
 
     if(currentQuestion == totalQuestions) {
       return (
-        <div id="question-wrapper">
+        <div id="questionnaire-wrapper">
           Survey finished!
         </div>
       );
     }
 
     return (
-      <div id="question-wrapper">
+      <section id="questionnaire-wrapper">
         <Progress index={currentQuestion} total={totalQuestions} />
         <Questionnaire 
           currentQuestion={currentQuestion}
           question={questions[currentQuestion]}
           handleAnswer={this.handleAnswer}
         />
-      </div>
+      </section>
     );
 
   }

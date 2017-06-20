@@ -1,0 +1,83 @@
+@main-bg: #EEF3F5;
+@question-bg: #FFF;
+@question-primary: #A5A5A5;
+@question-secondary: #394AF2;
+
+#questionnaire-wrapper {
+  display: block;
+  margin: 0 auto;
+  padding: 30px;
+  width: 600px;
+  background-color: @main-bg;
+}
+
+.questionnaire-card {
+
+  display: block;
+
+  h1 {
+    display: block;
+    font-size: 20px;
+  }
+
+  ul {
+
+    border-radius: 5px;
+    color: #000;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: all 0.1s linear 0s;
+
+    li {
+    
+      display: block;
+      padding: 15px;
+      margin-bottom: 5px;
+      background-color: @question-bg;
+      border: solid 2px @question-bg;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+    
+      .text {
+        display: block;
+        font-size: 20px;
+        padding-left: 15px;
+      }
+
+      .radio {
+        background-color: @question-primary;
+        border-radius: 50%;
+        display: block;
+        height: 25px;
+        position: absolute;
+        right: 25px;
+        top: 12px;
+        width: 25px;
+        transform: scale(0.5);
+        transition: all 0.3s ease 0s;
+      }
+
+      &:hover {
+        border: 2px solid @question-secondary;
+      }
+
+      &:hover .radio {
+        background-color: @question-secondary;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+    }
+
+
+  }
+
+}
+
+.questionnaire-progress {
+  display: block;
+}

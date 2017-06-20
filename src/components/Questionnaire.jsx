@@ -10,7 +10,8 @@ const Questionnaire = ({ currentQuestion, question, handleAnswer }) => {
         {question.options.map((option, index) => {
           return (
            <li key={index} onClick={handleAnswer.bind(null, currentQuestion, option)}>
-            {option}
+            <span className="radio"></span>
+            <span className="text">{option}</span>
            </li>
           )
         })}
