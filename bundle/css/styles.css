@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin);body {
+  font-family: 'Cabin', sans-serif;
+}
+#questionnaire-wrapper {
+  display: block;
+  margin: 0 auto;
+  padding: 30px;
+  width: calc(100% - 60px);
+  max-width: 600px;
+  background-color: #EEF3F5;
+}
+.questionnaire-card {
+  margin-top: 40px;
+}
+.questionnaire-card h1 {
+  display: block;
+  font-size: 20px;
+}
+.questionnaire-card ul {
+  border-radius: 5px;
+  color: #000;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  transition: all 0.1s linear 0s;
+}
+.questionnaire-card ul li {
+  display: block;
+  padding: 15px;
+  margin-bottom: 5px;
+  background-color: #FFF;
+  border: solid 2px #FFF;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.questionnaire-card ul li .text {
+  display: block;
+  font-size: 20px;
+  padding-left: 15px;
+}
+.questionnaire-card ul li .radio {
+  background-color: #A5A5A5;
+  border-radius: 50%;
+  display: block;
+  height: 25px;
+  position: absolute;
+  right: 25px;
+  top: 12px;
+  width: 25px;
+  transform: scale(0.5);
+  transition: all 0.3s ease 0s;
+}
+.questionnaire-card ul li:hover {
+  border: 2px solid #394AF2;
+}
+.questionnaire-card ul li:hover .radio {
+  background-color: #394AF2;
+  opacity: 1;
+  transform: scale(1);
+}
+.questionnaire-progress {
+  display: block;
+}
+.questionnaire-progress h2 {
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  font-style: italic;
+  margin: 0px 0px 10px 0px;
+}
+.questionnaire-bar {
+  display: block;
+  width: 100%;
+  background-color: #FFF;
+}
+.questionnaire-bar span {
+  display: block;
+  width: 10%;
+  background-color: green;
+  height: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map*/
