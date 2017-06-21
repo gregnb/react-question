@@ -82,5 +82,25 @@
   background-color: green;
   height: 10px;
 }
+.question-animation-appear,
+.question-animation-enter {
+  opacity: 0.01;
+}
+.question-animation-appear.question-animation-appear-active,
+.question-animation-enter.question-animation-enter-active {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
 
 /*# sourceMappingURL=styles.css.map*/
