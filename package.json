@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/gregnb/react-question#readme",
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"],
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/data.js"
     ]
